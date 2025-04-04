@@ -5,7 +5,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import MobileNavigationDropdown from './MobileNavigationDropdown';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
-import { CaretUp } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react';
 import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 
 interface Props {
@@ -17,7 +17,6 @@ function MobileNavigation({ data }: Props) {
     const { theme } = useContext(ThemeContext);
 
     const dropdownData = data && Object.entries(data).map(([itemCategory, items]) => {
-
         return { title: itemCategory, items }
     })
 
@@ -26,21 +25,20 @@ function MobileNavigation({ data }: Props) {
     }
     return (
         <>
-            <div className={`${styles.mobileNavigation} ${isOpen ? styles.openMobileNavigation : ''} ${styles[theme]}`} >
-                <div className={`${styles.burgerContainer} ${isOpen ? styles.open : ''}`}
+            <div className={`${styles.mobileNav} ${isOpen ? styles.navOpen : ''} ${styles[theme]}`} >
+                <div 
+                    className={`${styles.burgerMenu} ${isOpen ? styles.burgerMenuOpen : ''}`}
+                    role='button'
                     onClick={() => setIsOpen(prevIsOpen => !prevIsOpen)} >
-                    <span className={styles.burgerLine}></span>
-                    <span className={styles.burgerLine}></span>
-                    <span className={styles.burgerLine}></span>
+                    {[...Array(3)].map((_, i) => (
+                        <span key={i} className={styles.burgerLine}></span>
+                    ))}
                 </div>
-                <div className={`${styles.menuContainer} ${isOpen ? styles.menuOpen : ''}`}>
+                <div className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
                     {
-                        dropdownData
-                            ?
-                            dropdownData.map(({ title, items }) => {
-                                if (title === 'COMPANY') return null;
-
-                                return (
+                        dropdownData && dropdownData.map(({ title, items }) => {
+                            if (title === 'COMPANY') return null;
+                            return (
                                 <MobileNavigationDropdown
                                     key={title}
                                     title={title}
@@ -48,29 +46,30 @@ function MobileNavigation({ data }: Props) {
                                     selected={title === selectedCategory}
                                     handleSelected={handleSelected}
                                 />
-                                )
-                            })
-                            :
-                            null
+                            );
+                        })
                     }
                     {
-                        data ? data["COMPANY"].map((value, index) => (
-                            <a 
+                        data && data["COMPANY"].map((value, index) => (
+                            <a
                                 key={index}
-                                className={styles.CompanyLink}
+                                className={styles.companyLink}
                             >
                                 {value}
-                            </a> 
-                        )): null
+                            </a>
+                        ))
                     }
-                    <div
-                        className={styles.MobileNavigationBottom}
-                    >
-                        <div className={styles.MobileNavigationBottomLanguageDropdown}>
-                            <img src={UkFlagLogo} alt="" />
-                            <CaretUp size={32}/>
+                    <div className={styles.navFooter} >
+                        <div className={styles.languageDropdown}>
+                            <div className={styles.languageIcon}>
+                                <img src={UkFlagLogo} alt="" /> 
+                            </div>
+                            <span>EN</span>
+                            <div className={styles.languageArrow}>
+                                <CaretDown size={22} />
+                            </div>
                         </div>
-                        <ThemeSwitcher/>
+                        <ThemeSwitcher />
                     </div>
                 </div>
             </div>

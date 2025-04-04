@@ -1,53 +1,83 @@
 @import "../../styles/variables";
 
-.MobileNavigationDropdown {
+.dropdown {
     padding: 1rem 0;
-    .MobileNavigationDropdownTitle {
-        cursor: pointer;
-        font-size: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-width: 75vw;
 
-        .MobileNavigationDropdownPointer {
-            display: inline-block;
+    &.dropdownSelected {
+        .dropdownTitle {
+            color: inherit;
+            font-weight: bold;
         }
     }
 
-    .MobileNavigationDropdownLinksWrapper {
-        padding: 1rem 0 0 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    &:not(:first-child) {
+        border-top: 1px solid transparent;
+    }
+}
 
-        .MobileNavigationDropdownLink {
-            cursor: pointer;
+.dropdownTitle {
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 75vw;
+}
 
-            &.SelectedLink {
-                
+.dropdownLinks {
+    padding: 1rem 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dropdownLink {
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.3s ease;
+
+    &.linkSelected {
+        font-weight: bold;
+    }
+}
+
+.light {
+    &.dropdown {
+        &:not(:first-child) {
+            border-top: 1px solid $gray-400;
+        }
+
+        &.dropdownSelected {
+            .dropdownTitle {
+                color: $primary-color;
             }
         }
     }
 
-    // .MobileNavigationDropdownItem {
-        // margin-left: auto;
-    // }
-
-}
-
-.light {
-    &.Selected {
-        .MobileNavigationDropdownTitle {
-            color: $primary-color;
-        }
-    }
-
-    .SelectedLink {
+    .linkSelected {
         color: $primary-color;
     }
+}
 
-    &:not(&:first-child) {
-        border-top: 2px solid $gray-400;
+.dark {
+    &.dropdown {
+        &:not(:first-child) {
+            border-top: 1px solid $gray-100;
+        }
+
+        .dropdownTitle,
+        .dropdownLink {
+            color: $gray-400;
+
+            &.linkSelected {
+                color: $secondary-color;
+            }
+        }
+
+        &.dropdownSelected {
+            .dropdownTitle {
+                color: $secondary-color;
+            }
+        }
     }
 }

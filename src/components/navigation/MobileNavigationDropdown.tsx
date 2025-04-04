@@ -25,21 +25,18 @@ function MobileNavigationDropdown({ title, items, selected, handleSelected }: Pr
     }, [selected]);
 
     return (
-        <div
-            className={`${styles.MobileNavigationDropdown} ${selected ? styles.Selected : ''} ${styles[theme]}`}
-
-        >
-            <h3 className={styles.MobileNavigationDropdownTitle} onClick={() => handleSelected(title)}>
+        <div className={`${styles.dropdown} ${selected ? styles.dropdownSelected : ''} ${styles[theme]}`}>
+            <h3 className={styles.dropdownTitle} onClick={() => handleSelected(title)}>
                 {title}
                 {items && items.length ? (selected ? <CaretUp size={24} /> : <CaretDown size={24} />) : null}
             </h3>
             {selected && items && items.length
                 ?
-                <div className={styles.MobileNavigationDropdownLinksWrapper} >
+                <div className={styles.dropdownLinks} >
                     {items.map((value, key) => (
                         <a
                             key={key}
-                            className={`${styles.MobileNavigationDropdownLink} ${value === selectItem ? styles.SelectedLink : ''}`}
+                            className={`${styles.dropdownLink} ${value === selectItem ? styles.linkSelected : ''}`}
                             onClick={() => handleSelectedLink(value)}
                         >
                             {value}
