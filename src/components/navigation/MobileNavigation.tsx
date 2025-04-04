@@ -5,7 +5,6 @@ import { ThemeContext } from '../../context/ThemeContext';
 import MobileNavigationDropdown from './MobileNavigationDropdown';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
-import { CaretDown } from '@phosphor-icons/react';
 import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 
 interface Props {
@@ -66,7 +65,7 @@ function MobileNavigation({ data }: Props) {
                             </div>
                             <span>EN</span>
                             <div className={styles.languageArrow}>
-                                <CaretDown size={22} />
+                                UP
                             </div>
                         </div>
                         <ThemeSwitcher />

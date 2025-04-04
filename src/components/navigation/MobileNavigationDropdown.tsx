@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import styles from './MobileNavigationDropdown.module.scss';
-import { CaretUp, CaretDown } from '@phosphor-icons/react';
 
 interface Props {
     title: string,
@@ -28,7 +27,7 @@ function MobileNavigationDropdown({ title, items, selected, handleSelected }: Pr
         <div className={`${styles.dropdown} ${selected ? styles.dropdownSelected : ''} ${styles[theme]}`}>
             <h3 className={styles.dropdownTitle} onClick={() => handleSelected(title)}>
                 {title}
-                {items && items.length ? (selected ? <CaretUp size={24} /> : <CaretDown size={24} />) : null}
+                {items && items.length ? (selected ? 'UP' : 'DOWN' ) : null}
             </h3>
             {selected && items && items.length
                 ?
