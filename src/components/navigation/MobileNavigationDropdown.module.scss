@@ -1,27 +1,53 @@
 @import "../../styles/variables";
 
 .MobileNavigationDropdown {
-    &.Selected {
-        color: pink
-    }
-
+    padding: 1rem 0;
     .MobileNavigationDropdownTitle {
+        cursor: pointer;
         font-size: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         min-width: 75vw;
+
         .MobileNavigationDropdownPointer {
             display: inline-block;
         }
     }
 
-    .MobileNavigationDropdownItem {
-        margin-left: auto;
+    .MobileNavigationDropdownLinksWrapper {
+        padding: 1rem 0 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .MobileNavigationDropdownLink {
+            cursor: pointer;
+
+            &.SelectedLink {
+                
+            }
+        }
+    }
+
+    // .MobileNavigationDropdownItem {
+        // margin-left: auto;
+    // }
+
+}
+
+.light {
+    &.Selected {
+        .MobileNavigationDropdownTitle {
+            color: $primary-color;
+        }
+    }
+
+    .SelectedLink {
+        color: $primary-color;
     }
 
     &:not(&:first-child) {
-        padding: 1rem 0;
-        border-top: 3px solid green;
+        border-top: 2px solid $gray-400;
     }
 }
