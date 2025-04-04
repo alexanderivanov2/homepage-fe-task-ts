@@ -2,22 +2,23 @@ import { useContext, useState } from 'react';
 
 import styles from './MobileNavigation.module.scss';
 import { ThemeContext } from '../../context/ThemeContext';
-import MobileNavigationDropdown from './MobileNavigationDropdown';
+import MobileNavigationDropdown from './NavigationDropdown';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
 import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 
+import { ChevronDown } from 'lucide-react';
+
 interface Props {
-    data: Record<string, string[]> | null,
+    dropdownData: {title: string, items: string[]}[],
+    companyData: string[],
+
 }
-function MobileNavigation({ data }: Props) {
+
+function MobileNavigation({ dropdownData, companyData }: Props) {
     const [isOpen, setIsOpen] = useState<Boolean>(false);
     const [selectedCategory, setSelectedCategory] = useState<String | null>(null);
     const { theme } = useContext(ThemeContext);
-
-    const dropdownData = data && Object.entries(data).map(([itemCategory, items]) => {
-        return { title: itemCategory, items }
-    })
 
     const handleSelected = (category: string) => {
         setSelectedCategory(prevCategory => prevCategory === category ? null : category);
@@ -35,7 +36,7 @@ function MobileNavigation({ data }: Props) {
                 </div>
                 <div className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
                     {
-                        dropdownData && dropdownData.map(({ title, items }) => {
+                        dropdownData.map(({title, items}) => {
                             if (title === 'COMPANY') return null;
                             return (
                                 <MobileNavigationDropdown
@@ -49,7 +50,7 @@ function MobileNavigation({ data }: Props) {
                         })
                     }
                     {
-                        data && data["COMPANY"].map((value, index) => (
+                        companyData.map((value, index) => (
                             <a
                                 key={index}
                                 className={styles.companyLink}
@@ -65,7 +66,7 @@ function MobileNavigation({ data }: Props) {
                             </div>
                             <span>EN</span>
                             <div className={styles.languageArrow}>
-                                UP
+                                <ChevronDown size={24}/>
                             </div>
                         </div>
                         <ThemeSwitcher />

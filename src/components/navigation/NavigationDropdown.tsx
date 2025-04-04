@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
-import styles from './MobileNavigationDropdown.module.scss';
-
+import mobileStyles from './MobileNavigationDropdown.module.scss';
+import desktopStyles from './DesktopNavigationDropdown.module.scss';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useDeviceType } from '../../context/DeviceType';
 interface Props {
     title: string,
     items: string[] | null,
@@ -11,6 +13,7 @@ interface Props {
 
 function MobileNavigationDropdown({ title, items, selected, handleSelected }: Props) {
     const { theme } = useContext(ThemeContext);
+    const { isMobile } = useDeviceType();
     const [selectItem, setSelectItem] = useState('');
 
     const handleSelectedLink = (itemName: string) => {
@@ -23,11 +26,13 @@ function MobileNavigationDropdown({ title, items, selected, handleSelected }: Pr
         }
     }, [selected]);
 
+    const styles = isMobile ? mobileStyles : desktopStyles;
+
     return (
         <div className={`${styles.dropdown} ${selected ? styles.dropdownSelected : ''} ${styles[theme]}`}>
             <h3 className={styles.dropdownTitle} onClick={() => handleSelected(title)}>
                 {title}
-                {items && items.length ? (selected ? 'UP' : 'DOWN' ) : null}
+                {items && items.length && isMobile ? (selected ? <ChevronUp size={24}/> : <ChevronDown size={24}/>) : null}
             </h3>
             {selected && items && items.length
                 ?
