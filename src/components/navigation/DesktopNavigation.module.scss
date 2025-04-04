@@ -7,24 +7,54 @@
     align-self: stretch;
     justify-self: stretch;
     flex: 1 1 100%;
-
-    .rightSideNav, .leftSideNav {
+    .rightSideNav,
+    .leftSideNav {
         display: flex;
         align-items: center;
+    }
+
+    .leftSideNav {
         height: 100%;
     }
 
     .rightSideNav {
+        .companyLink {
+            padding: 0.1rem 0.5rem 0.2rem;
+            border-right: 1px;
+            border-right-style: solid;
+        }
+
         .languageDropdown {
             display: flex;
             align-items: center;
+            padding: 0.1rem 1rem;
+
             .languageIcon {
                 img {
                     width: 25px;
                     height: 50px;
-
                 }
             }
         }
     }
+
+}
+
+.light {
+
+    .companyLink {
+        color: $gray-100;
+        cursor: pointer;
+    }
+
+    .languageDropdown {
+        color: $gray-100;
+        span {
+            padding: 0 .5rem;
+        }
+    }
+}
+
+.dark {
+
 }

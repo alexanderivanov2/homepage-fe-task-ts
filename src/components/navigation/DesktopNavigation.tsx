@@ -15,7 +15,7 @@ interface Props {
 
 function DesktopNavigation({ dropdownData, companyData }: Props) {
     const { theme } = useContext(ThemeContext);
-     const [selectedCategory, setSelectedCategory] = useState<String | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<String | null>(null);
     const handleSelected = (category: string) => {
         setSelectedCategory(prevCategory => prevCategory === category ? null : category);
     }
@@ -26,18 +26,12 @@ function DesktopNavigation({ dropdownData, companyData }: Props) {
                     if (title === 'COMPANY') return null;
                     return (
                         <MobileNavigationDropdown
-                        key={title}
-                        title={title}
-                        items={items}
-                        selected={title === selectedCategory}
-                        handleSelected={handleSelected}
-                    />
-                        // <div
-                        //     key={title}
-                        // >
-                            
-                        //     {title}
-                        // </div>
+                            key={title}
+                            title={title}
+                            items={items}
+                            selected={title === selectedCategory}
+                            handleSelected={handleSelected}
+                        />
                     );
                 })}
             </div>
@@ -58,7 +52,7 @@ function DesktopNavigation({ dropdownData, companyData }: Props) {
                     </div>
                     <span>EN</span>
                     <div className={styles.languageArrow}>
-                        <ChevronDown size={24} />
+                        <ChevronDown size={16} />
                     </div>
                 </div>
                 <ThemeSwitcher />
