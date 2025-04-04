@@ -1,0 +1,115 @@
+@import "../../styles/variables";
+
+.mobileNavigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all ease-in-out .5s;
+    padding-left: 16px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background-color: transparent;
+        transition: all ease-in-out .5s;
+    }
+
+    .menuContainer {
+        overflow: hidden;
+        position: absolute;
+        top: calc(100% + 2px);
+        max-height: 0;
+        transition: all ease-in-out .1s;
+        padding: 0;
+        z-index: 10;
+
+        &.menuOpen {
+            z-index: 10;
+            overflow: hidden;
+            background-color: $gray-200;
+            padding: 2rem;
+            right: 0;
+            max-height: 750px;
+            transition: all ease-in-out .5s;
+        }
+    }
+    
+    .burgerContainer {
+        cursor: pointer;
+        padding-right: 8px;
+    
+        .burgerLine {
+            position: relative;
+            display: block;
+            margin: $burger-menu-gap;
+            width: $burger-menu-w;
+            height: $burger-menu-h;
+            transition: all ease-in-out .5s;
+        }
+    }
+}
+
+
+.open {
+    .burgerLine {
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:first-child,
+        &:last-child {
+            transform-origin: left;
+        }
+
+        &:first-child {
+            transform: rotate(40deg);
+        }
+
+        &:last-child {
+            transform: rotate(-40deg);
+        }
+    }
+}
+
+.light {
+    &.openMobileNavigation {
+        background-color: $gray-200;
+
+        &::before {
+            background-color: $gray-200;
+        }
+
+        .burgerLine {
+            background-color: $primary-color;
+        }
+    }
+
+    .burgerLine {
+        background-color: $gray-100;
+    }
+}
+
+.dark {
+    &.openMobileNavigation {
+        background-color: $black;
+
+        &::before {
+            background-color: $black;
+        }
+
+        .burgerLine {
+            background-color: $secondary-color;
+        }
+    }
+
+    .burgerLine {
+        background-color: $black;
+    }
+}

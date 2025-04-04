@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.MobileNavigationDropdown {
+    &.Selected {
+        color: pink
+    }
+
+    .MobileNavigationDropdownTitle {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 75vw;
+        .MobileNavigationDropdownPointer {
+            display: inline-block;
+        }
+    }
+
+    .MobileNavigationDropdownItem {
+        margin-left: auto;
+    }
+
+    &:not(&:first-child) {
+        padding: 1rem 0;
+        border-top: 3px solid green;
+    }
+}
