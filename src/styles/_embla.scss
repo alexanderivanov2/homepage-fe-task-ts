@@ -1,0 +1,111 @@
+@import "./variables";
+
+.embla {
+    --slide-height: 25rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    position: relative;
+
+    .embla__viewport {
+        overflow: hidden;
+
+        .embla__container {
+            display: flex;
+            touch-action: pan-y pinch-zoom;
+            margin-left: calc(var(--slide-spacing) * -1);
+
+            .embla__slide {
+                transform: translate3d(0, 0, 0);
+                flex: 0 0 var(--slide-size);
+                padding-left: var(--slide-spacing);
+
+                .embla__slide__item {
+                    font-size: 4rem;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: var(--slide-height);
+                    user-select: none;
+                    position: relative;
+                    width: 100%;
+                    
+
+                    .embla__slide__image {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                      }
+                      
+                      .embla__slide__text {
+                        position: absolute;
+                        margin-top: 1rem;
+                        font-size: 1.2rem;
+                        color: #333;
+                      }
+                }
+            }
+        }
+    }
+
+    .embla__controls {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+
+
+        .embla__dots {
+            display: flex;
+            justify-content: center;
+            gap: .25rem;
+
+            .embla__dot {
+                -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+                -webkit-appearance: none;
+                appearance: none;
+                touch-action: manipulation;
+                display: inline-flex;
+                text-decoration: none;
+                cursor: pointer;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                width: 1rem;
+                height: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            .embla__dot--selected {
+                box-shadow: inset 0 0 0 0.2rem var(--text-body);
+            }
+        }
+    }
+}
+
+.embla {
+    &.light {
+        .embla__dot {
+            background-color: $gray-200;
+        }
+
+        .embla__dot--selected {
+            background-color: $primary-color;
+        }
+    }
+
+    &.dark {
+        .embla__dot {
+            background-color: $gray-200;
+        }
+
+        .embla__dot--selected {
+            background-color: $secondary-color;
+        }
+    }
+}
