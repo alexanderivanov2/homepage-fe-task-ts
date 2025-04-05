@@ -1,3 +1,4 @@
+import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import HeroSection from './components/heroSection/HeroSection'
 import ProductsSection from './components/ProductsSection/ProductsSection'
@@ -12,6 +13,7 @@ function App() {
 			<UpdatesPanel />
 			<ProductsSection />
 			<ServerBasedProductSection />
+			<Footer />
 		</>
 	)
 }
