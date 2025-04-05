@@ -14,10 +14,17 @@ html, body {
 }
 
 .section {
-
+    &.dark {
+        background-color: $black;
+    }
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 1200px) {
+        max-width: 1400px;
+    }
 }

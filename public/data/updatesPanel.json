@@ -1,0 +1,30 @@
+[
+    {
+        "icon": "megaphone",
+        "topic": "News",
+        "image": "https://fastly.picsum.photos/id/551/2400/600.webp?hmac=mvWUEpIllKjkx0t_CNpp8hLf5bUXlowbk1ps3JcMgbM",
+        "title": "EGT is expecting FADJA Colombia 2017",
+        "date": "April 4, 2017",
+        "description": "“We’re expecting FADJA Colombia 2017 to continue our success from the 2016’s event,” ...",
+        "buttonText": "READ MORE"
+    },
+    {
+        "icon": "calendar",
+        "topic": "Events",
+        "image": "https://fastly.picsum.photos/id/551/2400/600.webp?hmac=mvWUEpIllKjkx0t_CNpp8hLf5bUXlowbk1ps3JcMgbM",
+        "title": "Indian Gaming Show",
+        "date": "San Diego, April 10–13, 2017",
+        "location": "Stand 1833",
+        "description": "",
+        "buttonText": "READ MORE"
+    },
+    {
+        "icon": "file-text",
+        "topic": "Press Releases",
+        "image": "https://fastly.picsum.photos/id/551/2400/600.webp?hmac=mvWUEpIllKjkx0t_CNpp8hLf5bUXlowbk1ps3JcMgbM",
+        "title": "True Leader accolade for Bulgarian firm",
+        "date": "February 10, 2017",
+        "description": "Euro Games technologies has been awarded the True Leader 2015 Accolade. The company...",
+        "buttonText": "READ MORE"
+    }
+]
