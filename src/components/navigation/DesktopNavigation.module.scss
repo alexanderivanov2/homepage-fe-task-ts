@@ -7,6 +7,7 @@
     align-self: stretch;
     justify-self: stretch;
     flex: 1 1 100%;
+
     .rightSideNav,
     .leftSideNav {
         display: flex;
@@ -22,12 +23,18 @@
             padding: 0.1rem 0.5rem 0.2rem;
             border-right: 1px;
             border-right-style: solid;
+            cursor: pointer;
         }
 
         .languageDropdown {
             display: flex;
             align-items: center;
             padding: 0.1rem 1rem;
+            cursor: pointer;
+
+            span {
+                padding: 0 .5rem;
+            }
 
             .languageIcon {
                 img {
@@ -37,24 +44,29 @@
             }
         }
     }
-
-}
-
-.light {
-
-    .companyLink {
-        color: $gray-100;
-        cursor: pointer;
-    }
-
-    .languageDropdown {
-        color: $gray-100;
-        span {
-            padding: 0 .5rem;
+    @media screen and (min-width: 1200px) {
+        .leftSideNav {
+            padding-left: 4rem;
         }
     }
 }
 
-.dark {
+.light {
+    .companyLink {
+        color: $gray-100;
+    }
 
+    .languageDropdown {
+        color: $gray-100;
+    }
+}
+
+.dark {
+    .companyLink {
+        color: $black;
+    }
+
+    .languageDropdown {
+        color: $black;
+    }
 }

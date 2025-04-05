@@ -8,8 +8,8 @@ import AppLightLogo from '../../assets/logos/app-logo-light.svg';
 import AppDarkLogo from '../../assets/logos/app-logo-dark.svg';
 
 import styles from './Header.module.scss';
-import MobileNavigation from '../navigation/MobileNavigation';
-import DesktopNavigation from '../navigation/DesktopNavigation';
+import MobileNavigation from '../Navigation/MobileNavigation';
+import DesktopNavigation from '../Navigation/DesktopNavigation';
 
 function Header() {
     const { theme } = useContext(ThemeContext);

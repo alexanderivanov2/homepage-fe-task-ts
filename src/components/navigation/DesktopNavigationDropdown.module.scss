@@ -19,7 +19,8 @@
 
 .dropdownTitle {
     cursor: pointer;
-    font-size: 16px;
+    font-size: $font-size;
+    font-weight: $font-weight-medium;
     padding: 1rem;
     display: flex;
     justify-content: center;

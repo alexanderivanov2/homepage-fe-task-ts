@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 
 import styles from './DesktopNavigation.module.scss'
 import { ThemeContext } from '../../context/ThemeContext'
-import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
 import { ChevronDown } from 'lucide-react';

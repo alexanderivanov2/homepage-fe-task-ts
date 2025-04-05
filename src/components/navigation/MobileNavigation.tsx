@@ -5,7 +5,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import MobileNavigationDropdown from './NavigationDropdown';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
-import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 import { ChevronDown } from 'lucide-react';
 
