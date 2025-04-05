@@ -15,7 +15,13 @@ html, body {
 
 .section {
     &.dark {
+        background-color: lighten($black, 15%);; 
+    }
+    &.highlighed.dark {
         background-color: $black;
+    }
+    &.highlighed.light {
+            background-color: $gray-200;
     }
 }
 

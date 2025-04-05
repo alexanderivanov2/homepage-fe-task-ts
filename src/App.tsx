@@ -1,5 +1,6 @@
 import Header from './components/header/Header'
 import HeroSection from './components/heroSection/HeroSection'
+import ProductsSection from './components/ProductsSection/ProductsSection'
 import UpdatesPanel from './components/updatesPanel/UpdatesPanel'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 			<Header />
 			<HeroSection />
 			<UpdatesPanel />
+			<ProductsSection />
 		</>
 	)
 }
