@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+
+.socialMediaLinks {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem;
+    .socialLinkBox {
+        padding: .75rem;
+        position: relative;
+        display: flex;
+        cursor: pointer;
+
+        svg {
+            position: relative;
+            z-index: 5;
+            color: $gray-100;
+        }
+
+        &.facebook::after {
+            background-color: blue;
+        }
+
+        &.youtube::after {
+            background-color: $primary-color;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:not(:first-child) {
+            border-top-width: 1px;
+            border-top-style: solid;
+        }
+    }
+}
+
+.light {
+    &.socialMediaLinks {
+        background-color: $gray-200;
+        .socialLinkBox {
+            &:not(:first-child) {
+                border-top-color: $gray-400;
+            }
+        }
+    }
+}
+
+.dark {
+    &.socialMediaLinks {
+        background-color: $black;
+        .socialLinkBox {
+            &:not(:first-child) {
+                border-top-color: $gray-200;
+            }
+        }
+    }
+}

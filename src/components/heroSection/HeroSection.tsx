@@ -4,7 +4,8 @@ import { ThemeContext } from '../../context/ThemeContext';
 import EmblaCarousel from '../carousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
 import { useJsonData } from '../../hooks/useJson';
-import { Youtube, Facebook } from 'lucide-react';
+import SocialMediaLinks from '../socialMediaLinks/SocialMediaLinks';
+
 
 function HeroSection() {
     const { theme } = useContext(ThemeContext);
@@ -16,10 +17,7 @@ function HeroSection() {
             <EmblaCarousel
                 slides={SLIDES} options={OPTIONS}
             />
-            <div className='socialMediaLinks'>
-                <Youtube size={24}/>
-                <Facebook size={24} />
-            </div>
+            <SocialMediaLinks />
         </section>
     )
 }
