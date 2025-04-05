@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+.serverBasedProductSection {
+    padding: 3rem 2.3rem;
+
+    .productTitle {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .serverBasedProduct {
+        height: 70vh;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+        .serverBasedProductImg {
+            height: 70vh;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .serverBasedProductNameBox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 75%;
+            background: rgba(0, 123, 255, 0.6);
+            clip-path: ellipse(80% 60% at 0% 100%);
+        }
+
+        .serverBasedProductNameWrapper {
+            position: absolute;
+            bottom: 15%;
+            left: 5%;
+            z-index: 2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: stretch;
+
+            .serverBasedProductMainName {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
+                font-weight: 400;
+                margin: 0;
+              }
+              
+              .serverBasedProductSubName {
+                font-size: 1.1rem;
+                margin: 0;
+              }
+        }
+    }
+}
+
+.light {
+    .productTitle {
+        color: $black;
+    }
+}
+
+.dark {
+    .productTitle {
+        color: $gray-100;
+    }
+}

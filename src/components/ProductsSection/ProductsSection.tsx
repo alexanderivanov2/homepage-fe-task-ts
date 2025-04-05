@@ -21,9 +21,7 @@ function ProductsSection() {
                 <div className={styles.productsList}>
                     {products.map(({ image, text }) => (
                         <div key={text} className={styles.productBox}>
-                            <div>
-                                <img src={image} alt="product type" className={styles.productImg} />
-                            </div>
+                            <img src={image} alt="product type" className={styles.productImg} />
                             <div className={styles.productNameBox}>
                                 <p className={styles.productName}>{text}</p>
                             </div>
