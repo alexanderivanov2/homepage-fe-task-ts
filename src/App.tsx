@@ -1,20 +1,8 @@
-import Footer from './components/Footer/Footer'
-import Header from './components/Header/Header'
-import HeroSection from './components/HeroSection/HeroSection'
-import ProductsSection from './components/ProductsSection/ProductsSection'
-import ServerBasedProductSection from './components/ServerBasedProductSection/ServerBasedProductSection'
-import UpdatesPanel from './components/UpdatesPanelSection/UpdatesPanelSection'
+import LandingPage from './components/LandingPage'
 
 function App() {
 	return (
-		<>
-			<Header />
-			<HeroSection />
-			<UpdatesPanel />
-			<ProductsSection />
-			<ServerBasedProductSection />
-			<Footer />
-		</>
+		<LandingPage />
 	)
 }
 
