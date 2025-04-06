@@ -56,9 +56,13 @@
                 color: $primary-color;
             }
         }
+
+        .dropdownLink:hover {
+            color: $primary-color;
+        }
     }
 
-    .linkSelected, &:hover {
+    .linkSelected {
         color: $primary-color;
     }
 }

@@ -14,7 +14,7 @@ function UpdatesPanel() {
     const { data } = useJsonData<SectionItem[] | null>('updatesPanel');
     const updatesData = data ?? [];
 
-    return (updatesData.length &&
+    return (!!updatesData.length &&
         <section className={`section ${theme}`}>
             <div className={`container ${styles.updatesPanel}`}>
                 {updatesData.map((value, index) => (

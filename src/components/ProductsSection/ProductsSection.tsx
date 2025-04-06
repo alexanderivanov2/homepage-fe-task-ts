@@ -12,7 +12,7 @@ function ProductsSection() {
     const { data } = useJsonData<Product[] | null>('products');
     const products = data ?? [];
     
-    return ( products.length &&
+    return ( !!products.length &&
         <section className={`section highlighed ${theme} ${styles.productsSection} ${styles[theme]}`}>
             <div className="container">
                 <h2 className={styles.productsTitle}>Our Products</h2>

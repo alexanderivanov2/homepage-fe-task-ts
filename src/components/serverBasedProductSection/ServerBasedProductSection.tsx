@@ -8,7 +8,7 @@ function ServerBasedProductSection() {
     const { theme } = useContext(ThemeContext);
     const { data: serverBasedProductData }  = useJsonData<ServerBasedProduct | null>('serverBasedProduct');
 
-    return ( serverBasedProductData &&
+    return ( !!serverBasedProductData &&
         <section className={`section ${styles.serverBasedProductSection} ${theme} ${styles[theme]}`}>
             <div className={`container`}>
                 <h2 className={styles.productTitle}>Our Global Server Based Solution</h2>

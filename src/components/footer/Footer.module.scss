@@ -1,15 +1,19 @@
 @import "../../styles/variables";
 
 .footer {
+    cursor: default;
+
     .footerRows {
         display: flex;
         justify-content: center;
         flex-direction: column;
         padding: 2rem 0 3rem;
-        gap: 4rem;
+        gap: 2rem;
     }
+
     .copyrightBox {
         padding: 1.25rem;
+
         .copyrightText {
             text-align: center;
             font-size: 0.75rem;
@@ -21,6 +25,7 @@
             flex-direction: row;
             justify-content: flex-start;
             margin: 0 2.5rem;
+            gap: 4rem;
         }
     }
 
@@ -43,11 +48,13 @@
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+
     .footerRowTitle {
         font-size: 1rem;
         margin-bottom: 0.1rem;
         display: none;
     }
+
     .footerRowItem {
         font-size: 1rem;
         cursor: pointer;
@@ -70,11 +77,19 @@
 }
 
 .light {
-
     .copyrightBox {
         background-color: $primary-color;
+
         .copyrightText {
-            color: $gray-400;
+            color: $gray-500;
+        }
+    }
+
+    .footerRow {
+        .footerRowItem {
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 }
@@ -82,11 +97,19 @@
 .dark {
     .footerRow {
         color: $gray-100;
+
+        .footerRowItem {
+            &:hover {
+                color: $secondary-color;
+            }
+        }
     }
+
     .copyrightBox {
         background-color: $secondary-color;
+
         .copyrightText {
-            color: $gray-200;
+            color: $black;
         }
     }
 }

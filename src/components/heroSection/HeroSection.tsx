@@ -16,7 +16,7 @@ function HeroSection() {
     const { data } = useJsonData<Slide[] | null>('slides');
     const OPTIONS: EmblaOptionsType = {};
     const SLIDES = data ?? [];
-    return (SLIDES.length &&
+    return (!!SLIDES.length &&
         <section className={`${styles.heroSection} ${styles[theme]}`}>
             <EmblaCarousel
                 slides={SLIDES} options={OPTIONS}
