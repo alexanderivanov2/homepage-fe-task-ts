@@ -1,20 +1,18 @@
-import { useContext } from 'react'
-import styles from './ProductsSection.module.scss'
-import { ThemeContext } from '../../context/ThemeContext'
+import { useContext } from 'react';
+
 import { useJsonData } from '../../hooks/useJson';
+import { ThemeContext } from '../../context/ThemeContext';
 
-interface Product {
-    image: string,
-    text: string,
-}
+import { Product } from './types';
 
-type Products = Product[];
+import styles from './ProductsSection.module.scss';
 
 function ProductsSection() {
     const { theme } = useContext(ThemeContext);
-    const { data } = useJsonData<Products | []>('products');
+    const { data } = useJsonData<Product[] | null>('products');
     const products = data ?? [];
-    return (
+    
+    return ( products.length &&
         <section className={`section highlighed ${theme} ${styles.productsSection} ${styles[theme]}`}>
             <div className="container">
                 <h2 className={styles.productsTitle}>Our Products</h2>
@@ -29,7 +27,6 @@ function ProductsSection() {
                     ))}
                 </div>
             </div>
-
         </section>
     )
 }
