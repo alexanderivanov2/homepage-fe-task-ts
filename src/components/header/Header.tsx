@@ -25,7 +25,7 @@ function Header() {
     const logo = theme === 'light' ? AppLightLogo : AppDarkLogo;
 
     return (
-        <header className={`${styles.header} ${styles[theme]}`}>
+        <header className={`${styles.header}`}>
             <div className={styles.containerLogo}>
                 <img src={logo} alt="EGT DIGITAL LOGO" className={styles.logo} />
             </div>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import mobileStyles from './MobileNavigationDropdown.module.scss';
 import desktopStyles from './DesktopNavigationDropdown.module.scss';
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useDeviceType } from '../../context/DeviceType';
+
 interface Props {
     title: string,
     items: string[] | null,

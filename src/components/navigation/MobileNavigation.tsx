@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './MobileNavigation.module.scss';
 import MobileNavigationDropdown from './NavigationDropdown';
 
-import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
+import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 import { ChevronDown } from 'lucide-react';
