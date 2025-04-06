@@ -3,10 +3,9 @@ import { useState } from 'react';
 import styles from './MobileNavigation.module.scss';
 import MobileNavigationDropdown from './NavigationDropdown';
 
-import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
-import { ChevronDown } from 'lucide-react';
+import LanguageDropdown from './LanguageDropdown';
 
 interface Props {
     dropdownData: {title: string, items: string[]}[],
@@ -58,7 +57,7 @@ function MobileNavigation({ dropdownData, companyData }: Props) {
                         ))
                     }
                     <div className={styles.navFooter} >
-                        <div className={styles.languageDropdown}>
+                        {/* <div className={styles.languageDropdown}>
                             <div className={styles.languageIcon}>
                                 <img src={UkFlagLogo} alt="" /> 
                             </div>
@@ -66,7 +65,8 @@ function MobileNavigation({ dropdownData, companyData }: Props) {
                             <div className={styles.languageArrow}>
                                 <ChevronDown size={24}/>
                             </div>
-                        </div>
+                        </div> */}
+                        <LanguageDropdown />
                         <ThemeSwitcher />
                     </div>
                 </div>

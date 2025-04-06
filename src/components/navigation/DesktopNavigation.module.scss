@@ -30,25 +30,6 @@
                 text-decoration: underline;
             }
         }
-
-        .languageDropdown {
-            display: flex;
-            align-items: center;
-            padding: 0.1rem 1rem;
-            color: var(--text-primary);
-            cursor: pointer;
-
-            .language {
-                padding: 0 .5rem;
-            }
-
-            .languageIcon {
-                img {
-                    width: 25px;
-                    height: 50px;
-                }
-            }
-        }
     }
 
     @media screen and (min-width: 1200px) {

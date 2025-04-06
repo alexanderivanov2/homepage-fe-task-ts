@@ -1,0 +1,106 @@
+@import "../../styles/variables";
+
+.languageDropdown {
+    position: relative;
+
+    .languageContainer {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &,
+        .languageArrow,
+        .languageDropdown,
+        .language {
+            color: var(--text-darken);
+        }
+
+        .languageIcon {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .languageArrow {
+            display: flex;
+            align-items: center;
+            cursor: pointer
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            padding: 0.1rem 1rem;
+            gap: unset;
+            cursor: pointer;
+
+            .language,
+            .languageArrow {
+                color: var(--text-primary);
+            }
+
+            .language {
+                padding: 0 .5rem;
+            }
+
+            .languageIcon {
+                width: 25px;
+
+                img {
+                    width: 25px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    &.languageListOpen {
+        height: 100%;
+        
+        .otherLanguagesList {
+            background-color: white;
+            max-height: 400px;
+            width: 100%;
+            padding: 0.5rem;
+        }
+    }
+
+    .otherLanguagesList {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 1;
+        cursor: pointer;
+
+        .otherLanguage {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem 1rem;
+
+            .languageLabel {
+                font-size: $font-size;
+            }
+
+            .languageIcon {
+                display: flex;
+                align-items: center;
+                width: 30px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

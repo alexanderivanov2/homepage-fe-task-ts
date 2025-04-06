@@ -3,9 +3,8 @@ import { useState } from 'react'
 import styles from './DesktopNavigation.module.scss'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
-import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg';
-import { ChevronDown } from 'lucide-react';
 import MobileNavigationDropdown from './NavigationDropdown';
+import LanguageDropdown from './LanguageDropdown';
 
 interface Props {
     dropdownData: { title: string, items: string[] }[],
@@ -44,15 +43,7 @@ function DesktopNavigation({ dropdownData, companyData }: Props) {
                         </a>
                     ))
                 }
-                <div className={styles.languageDropdown}>
-                    <div className={styles.languageIcon}>
-                        <img src={UkFlagLogo} alt="" />
-                    </div>
-                    <span className={styles.language}>EN</span>
-                    <div className={styles.languageArrow}>
-                        <ChevronDown size={16} />
-                    </div>
-                </div>
+                <LanguageDropdown/>
                 <ThemeSwitcher />
             </div>
         </div>
