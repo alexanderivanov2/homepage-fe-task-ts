@@ -11,8 +11,7 @@
     }
 
     &:not(:first-child) {
-        border-top-width: 1px;
-        border-top-style: solid;
+        border-top: 1px solid $gray-300;
     }
 
     .cardHeader {
@@ -31,9 +30,7 @@
         }
     }
 
-    .cardBody {
-        border-color: $gray-400;
-        
+    .cardBody {        
         .cardImgBox {
             width: 100%;
             margin: 1rem 0 0.75rem;
@@ -116,8 +113,7 @@
             border-top: 0;
 
             .cardBody {
-                border-left-width: 1px;
-                border-left-style: solid;
+                border-left: 1px solid $gray-300;
             }
         }
 
