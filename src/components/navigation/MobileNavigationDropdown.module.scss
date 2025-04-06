@@ -58,7 +58,7 @@
         }
     }
 
-    .linkSelected {
+    .linkSelected, &:hover {
         color: $primary-color;
     }
 }
@@ -73,7 +73,9 @@
         .dropdownLink {
             color: $gray-400;
 
-            &.linkSelected {
+
+
+            &.linkSelected, &:hover {
                 color: $secondary-color;
             }
         }

@@ -132,6 +132,10 @@
         background-color: $gray-100;
     }
 
+    .companyLink:hover {
+        color: $primary-color;
+    }
+
     .language {
         color: $black;
     }
@@ -164,6 +168,10 @@
 
     .companyLink {
         color: $gray-400;
+
+        &:hover {
+            color: $secondary-color;
+        }
     }
 
     .language {

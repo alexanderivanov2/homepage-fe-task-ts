@@ -26,6 +26,10 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .dropdownLinks {
@@ -63,7 +67,7 @@
             color: $gray-100;
         }
 
-        &.dropdownSelected {
+        &.dropdownSelected{
             background-color: $gray-200;
             .dropdownTitle {
                 color: $primary-color;
@@ -72,6 +76,10 @@
 
         .dropdownLinks {
             background-color: $gray-200;
+
+            .dropdownLink:hover {
+                color: $primary-color;
+            }
         }
     }
 
@@ -89,7 +97,7 @@
         .dropdownLink {
             color: $gray-100;
 
-            &.linkSelected {
+            &.linkSelected, &:hover {
                 color: $secondary-color;
             }
         }
