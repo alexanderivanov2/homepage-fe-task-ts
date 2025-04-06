@@ -5,14 +5,14 @@ import EmblaCarousel from '../carousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
 import { useJsonData } from '../../hooks/useJson';
 import SocialMediaLinks from '../socialMediaLinks/SocialMediaLinks';
-
+import { Slide } from './types';
 
 function HeroSection() {
     const { theme } = useContext(ThemeContext);
-    const { data } = useJsonData('slides');
-    const OPTIONS: EmblaOptionsType = {}
+    const { data } = useJsonData<Slide[] | null>('slides');
+    const OPTIONS: EmblaOptionsType = {};
     const SLIDES = data ?? [];
-    return (
+    return (SLIDES.length &&
         <section className={`${styles.heroSection} ${styles[theme]}`}>
             <EmblaCarousel
                 slides={SLIDES} options={OPTIONS}
@@ -22,4 +22,4 @@ function HeroSection() {
     )
 }
 
-export default HeroSection
+export default HeroSection;

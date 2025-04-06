@@ -1,19 +1,15 @@
 [
-  {
-    "image": "https://fastly.picsum.photos/id/184/2400/600.jpg?hmac=QEHGowFnDnZ8WKfBFTqjvowVBvMYM7py7tedsfUzaQs",
-    "text": "Your Best Gaming Experience"
-  },
-  {
-    "image": "https://fastly.picsum.photos/id/684/2400/600.webp?hmac=nw8WxA_JqtMvM0KKuLfVraLO7N6G-Z0bxCHqAaR2rJo"
-  },
-  {
-    "image": "https://fastly.picsum.photos/id/353/2400/600.webp?hmac=cfua7ZjnFFgwJ8RcXvd324N5bq-tbL19LSPbVx9ykks"
-  },
-  {
-    "image": "https://fastly.picsum.photos/id/908/2400/600.webp?hmac=J8YYwuaYShqSKEQy9DHNjodlrmtDNAVt5Ajgk80_D8o"
-  },
-  {
-    "image": "https://fastly.picsum.photos/id/908/2400/600.webp?hmac=J8YYwuaYShqSKEQy9DHNjodlrmtDNAVt5Ajgk80_D8o",
-    "text": "Another image with caption"
-  }
+    {
+        "image": "https://fastly.picsum.photos/id/184/2400/600.jpg?hmac=QEHGowFnDnZ8WKfBFTqjvowVBvMYM7py7tedsfUzaQs",
+        "textFirstWord": "Your ",
+        "text": "Best Gaming Experience"
+    },
+    {
+        "image": "https://fastly.picsum.photos/id/684/2400/600.webp?hmac=nw8WxA_JqtMvM0KKuLfVraLO7N6G-Z0bxCHqAaR2rJo"
+    },
+    {
+        "image": "https://fastly.picsum.photos/id/353/2400/600.webp?hmac=cfua7ZjnFFgwJ8RcXvd324N5bq-tbL19LSPbVx9ykks",
+        "textFirstWord": "Your ",
+        "text": "Best Gaming Experience"
+    }
 ]

@@ -3,9 +3,10 @@ import { EmblaOptionsType } from 'embla-carousel'
 import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ThemeContext } from '../../context/ThemeContext'
+import { Slide } from '../HeroSection/types'
 
 type PropType = {
-    slides: {image?: string, text?: string}[] | []
+    slides: Slide[] | []
     options?: EmblaOptionsType,
 }
 
@@ -25,7 +26,9 @@ function EmblaCarousel({ slides, options }: PropType) {
                                     <img src={slide.image} alt={`Slide ${index + 1}`} className="embla__slide__image" />
                                 )}
                                 {slide.text && (
-                                    <p className="embla__slide__text">{slide.text}</p>
+                                    <p className="embla__slide__text">
+                                        { slide.textFirstWord ? <span className="thin">{ slide.textFirstWord }</span> : ''}{slide.text}
+                                    </p>
                                 )}
 
                             </div>
