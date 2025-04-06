@@ -1,11 +1,15 @@
 import { useContext } from 'react';
-import styles from './HeroSection.module.scss';
-import { ThemeContext } from '../../context/ThemeContext';
-import EmblaCarousel from '../carousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
+
 import { useJsonData } from '../../hooks/useJson';
-import SocialMediaLinks from '../socialMediaLinks/SocialMediaLinks';
+import { ThemeContext } from '../../context/ThemeContext';
+
+import EmblaCarousel from '../Carousel/EmblaCarousel';
+import SocialMediaLinks from '../SocialMediaLinks/SocialMediaLinks';
+
 import { Slide } from './types';
+
+import styles from './HeroSection.module.scss';
 
 function HeroSection() {
     const { theme } = useContext(ThemeContext);

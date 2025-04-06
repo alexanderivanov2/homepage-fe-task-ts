@@ -1,10 +1,11 @@
 @import '../../styles/variables';
 
 .updatesPanelCard {
-    padding: 2rem 2rem;
+    padding: 2rem 0;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+
     &:first-child {
         padding-top: 0;
     }
@@ -14,23 +15,22 @@
         border-top-style: solid;
     }
 
-
-
     .cardHeader {
         display: flex;
         align-items: center;
-        gap: .25rem;
+        gap: .75rem;
 
-        svg {}
-
-        .cardTopic {}
+        .cardTopic {
+            font-weight: $font-weight-small;
+            font-size: $font-size-xl;
+        }
     }
 
     .cardBody {
         .cardImgBox {
             width: 100%;
-            margin: 1rem 0;
-            
+            margin: 1rem 0 0.75rem;
+
             .cardImg {
                 aspect-ratio: 1.6 / 1;
                 width: 100%;
@@ -38,16 +38,17 @@
         }
 
         .cardBodyHead {
-            height: 100px; 
+            height: 110px;
 
             .cardTitle {
-                font-weight: 400;
-                font-size: 1.2rem;
+                font-weight: $font-weight-small;
+                font-size: $font-size-lg;
             }
 
             .cardDate {
                 margin: 0.25rem 0;
             }
+
             .cardLocation {
                 margin: -0.25rem 0 .5rem;
                 height: 1.25rem;
@@ -55,7 +56,7 @@
         }
 
         .cardDescription {
-            margin: auto 0 1rem;
+            margin: auto 0 1.5rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -73,12 +74,27 @@
         }
     }
 
+    @media screen and (min-width: 360px) {
+        padding: 2rem 1rem;
+        .cardBody {
+            .cardBodyHead {
+                height: 105px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 400px) { 
+        padding: 2rem;
+    }
+
     @media screen and (min-width: 1024px) {
+        max-width: 500px;
         padding: 2rem 0 4rem;
+
         &:first-child {
             padding-top: 2rem;
         }
-    
+
         &:not(:first-child) {
             border-top: 0;
 
@@ -89,7 +105,8 @@
         }
 
 
-        .cardHeader, .cardBody {
+        .cardHeader,
+        .cardBody {
             padding: 0 2rem;
         }
 
@@ -106,8 +123,10 @@
         }
     }
 
-    @media screen and (min-width: 1200px) { 
-        .cardHeader, .cardBody {
+    @media screen and (min-width: 1200px) {
+
+        .cardHeader,
+        .cardBody {
             padding: 0 3rem;
         }
 
@@ -115,7 +134,7 @@
             padding-bottom: .5rem;
         }
 
-        
+
         .cardBody {
             .cardBodyHead {
                 .cardTitle {
@@ -138,13 +157,21 @@
         .cardTitle {
             color: $black;
         }
-        
-        color: $gray-400;
+        .cardDate, .cardLocation {
+            color: $gray-500;
+        }
+        .cardDescription {
+            color: $gray-600;
+        }
     }
 
     .cardBtn {
         background-color: $primary-color;
         color: $gray-100;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -153,14 +180,15 @@
         .cardTopic {
             color: $gray-100;
         }
-        
+
         svg {
             color: $secondary-color;
         }
     }
-    
+
     .cardBody {
         border-color: $gray-100;
+
         .cardTitle {
             color: $gray-100;
         }
