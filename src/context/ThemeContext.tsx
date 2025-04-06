@@ -13,6 +13,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
+        document.body.classList.remove('light', 'dark');
+        document.body.classList.add(theme);
     }, [theme]);
 
     const changeTheme = () => {

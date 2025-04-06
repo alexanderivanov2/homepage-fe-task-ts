@@ -23,6 +23,7 @@
             padding: 0.1rem 0.5rem 0.2rem;
             border-right: 1px;
             border-right-style: solid;
+            color: var(--text-primary);
             cursor: pointer;
 
             &:hover {
@@ -34,9 +35,10 @@
             display: flex;
             align-items: center;
             padding: 0.1rem 1rem;
+            color: var(--text-primary);
             cursor: pointer;
 
-            span {
+            .language {
                 padding: 0 .5rem;
             }
 
@@ -62,15 +64,5 @@
 
     .languageDropdown {
         color: $gray-100;
-    }
-}
-
-.dark {
-    .companyLink {
-        color: $black;
-    }
-
-    .languageDropdown {
-        color: $black;
     }
 }

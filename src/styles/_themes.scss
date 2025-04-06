@@ -1,0 +1,23 @@
+.light {
+    --bg-color: #{$body-bg-light};
+    --bg-color-highlighed: #{$gray-200};
+    --text-primary: #{$text-light};
+    --text-secondary: #{$text-dark};
+    --text-tertiary: #{$gray-600};
+    --text-darken: #{$black};
+    --primary-color: #{$primary-color-light};
+    --border-color: #{$black};
+    --border-color-inverse: #{$gray-400};
+}
+
+.dark {
+    --bg-color: #{$body-bg-dark-lighten};
+    --bg-color-highlighed: #{$black};
+    --text-primary: #{$text-dark};
+    --text-secondary: #{$text-light};
+    --text-tertiary: #{$gray-300};
+    --text-darken: #{$gray-400};
+    --primary-color: #{$primary-color-dark};
+    --border-color: #{$gray-200};
+    --border-color-inverse: #{$gray-600};
+}

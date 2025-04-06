@@ -1,21 +1,6 @@
 $font-size: 16px;
 $font-family: 'Roboto', sans-serif;
 
-$primary-color: #D52228;
-$secondary-color: #FAA916;
-
-$body-bg-light: #FFFFFF;
-$body-bg-dark: #000000;
-
-$black: #000000;
-
-$gray-100: #F7F7F7;
-$gray-200: #E0E0E0;
-$gray-300: #D9DADF;
-$gray-400: #B2B5B8;
-$gray-500: #8E929B;
-$gray-600: #303338;
-
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
 $font-size-base: 1rem;
@@ -46,3 +31,22 @@ $burger-menu-gap: 8px;
 $slide-height-mobile: 500px;
 $slide-spacing: 1rem;
 $slide-size: 100%;
+
+$primary-color-light: #D52228;
+$primary-color-dark:  #FAA916;
+
+$body-bg-light: #FFFFFF;
+$body-bg-dark: #000000;
+$body-bg-dark-lighten: lighten($body-bg-dark, 15%);
+
+$text-dark: #000000;
+$text-light:  #FFFFFF;
+
+$gray-100: #F7F7F7;
+$gray-200: #E0E0E0;
+$gray-300: #D9DADF;
+$gray-400: #B2B5B8;
+$gray-500: #8E929B;
+$gray-600: #303338;
+$black: #000000;
+

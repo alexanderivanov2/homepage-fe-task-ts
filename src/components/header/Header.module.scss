@@ -4,8 +4,9 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-
-    border-bottom-width: 2px;
+    background-color: var(--primary-color);
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 1px;
     border-bottom-style: solid;
     .containerLogo {
         padding: .75rem .5rem .5rem 1rem;
@@ -18,14 +19,4 @@
     @media screen and (min-width: 1024px) {
         padding: 0 2.5%;
     }
-}
-
-.light {
-    background-color: $primary-color;
-    border-bottom-color: $black;
-}
-
-.dark {
-    background-color: $secondary-color;
-    border-bottom-color: $gray-200;
 }

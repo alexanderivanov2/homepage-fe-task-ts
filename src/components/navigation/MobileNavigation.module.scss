@@ -9,16 +9,98 @@
     transition: all ease-in-out 0.5s;
     padding-left: 16px;
 
+    &.navOpen {
+        background-color: var(--bg-color-highlighed);
+
+        &::before {
+            background-color: var(--bg-color-highlighed);
+        }
+
+        .burgerLine {
+            background-color: var(--primary-color);
+        }
+    }
+
     &::before {
         content: '';
         position: absolute;
         display: block;
         left: 0;
         right: 0;
+        z-index: 1;
         bottom: -2px;
         height: 2px;
         background-color: transparent;
         transition: all ease-in-out 0.5s;
+    }
+
+    .menu {
+        overflow: hidden;
+        position: absolute;
+        top: calc(100% + 2px);
+        max-height: 0;
+        padding: 0;
+        z-index: 10;
+        transition: all ease-in-out 0.05s;
+
+        &.menuOpen {
+            padding: 0.5rem 2rem;
+            right: 0;
+            max-height: 750px;
+            transition: all ease-in-out 0.5s;
+            background-color: var(--bg-color-highlighed);
+        }
+
+        .companyLink {
+            cursor: pointer;
+            display: block;
+            padding-bottom: 1rem;
+            color: var(--text-darken);
+
+            &.firstLink {
+                margin-top: 1.5rem;
+            }
+        
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+
+        .navFooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: 1rem;
+
+            .languageDropdown {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                &,
+                .languageArrow,
+                .languageDropdown {
+                    color: var(--text-secondary);
+                }
+
+                .languageIcon {
+                    width: 50px;
+                    height: 50px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .languageArrow {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer
+                }
+            }
+        }
     }
 }
 
@@ -27,164 +109,33 @@
     padding-right: 8px;
 
     .burgerLine {
+        background-color: var(--bg-color-highlighed);
         position: relative;
         display: block;
         margin: $burger-menu-gap;
         width: $burger-menu-w;
         height: $burger-menu-h;
-        background-color: $gray-100;
         transition: all ease-in-out 0.5s;
     }
-}
 
-.burgerMenuOpen {
-    .burgerLine {
-        &:nth-child(2) {
-            opacity: 0;
-        }
-
-        &:first-child,
-        &:last-child {
-            transform-origin: left;
-        }
-
-        &:first-child {
-            transform: rotate(40deg);
-        }
-
-        &:last-child {
-            transform: rotate(-40deg);
-        }
-    }
-}
-
-.menu {
-    overflow: hidden;
-    position: absolute;
-    top: calc(100% + 2px);
-    max-height: 0;
-    padding: 0;
-    z-index: 10;
-    transition: all ease-in-out 0.05s;
-
-    &.menuOpen {
-        padding: 0.5rem 2rem;
-        right: 0;
-        max-height: 750px;
-        transition: all ease-in-out 0.5s;
-    }
-}
-
-.companyLink {
-    cursor: pointer;
-    display: block;
-    padding-bottom: 1rem;
-}
-
-.navFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    margin-top: auto;
-
-    .languageDropdown {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        .languageIcon {
-            width: 50px;
-            height: 50px;
-
-            img {
-                width: 100%;
-                height: auto;
+    &.burgerMenuOpen {
+        .burgerLine {
+            &:nth-child(2) {
+                opacity: 0;
             }
-        }
 
-        .languageArrow {
-            display: flex;
-            align-items: center;
-            cursor: pointer
-        }
-    }
-}
+            &:first-child,
+            &:last-child {
+                transform-origin: left;
+            }
 
-.light {
-    &.navOpen {
-        background-color: $gray-200;
+            &:first-child {
+                transform: rotate(40deg);
+            }
 
-        &::before {
-            background-color: $gray-200;
-        }
-
-        .burgerLine {
-            background-color: $primary-color;
-        }
-    }
-
-    .menuOpen {
-        background-color: $gray-200;
-    }
-
-    .burgerLine {
-        background-color: $gray-100;
-    }
-
-    .companyLink:hover {
-        color: $primary-color;
-    }
-
-    .language {
-        color: $black;
-    }
-
-    .languageArrow {
-        color: $black;
-    }
-}
-
-.dark {
-    &.navOpen {
-        background-color: $black;
-
-        &::before {
-            background-color: $black;
-        }
-
-        .burgerLine {
-            background-color: $secondary-color;
-        }
-    }
-
-    .menuOpen {
-        background-color: $black;
-    }
-
-    .burgerLine {
-        background-color: $black;
-    }
-
-    .companyLink {
-        color: $gray-400;
-
-        &:hover {
-            color: $secondary-color;
-        }
-    }
-
-    .language {
-        color: $gray-200;
-    }
-
-    .languageArrow {
-        color: $gray-200;
-    }
-
-    .languageDropdown {
-        span {
-            color: $gray-200;
+            &:last-child {
+                transform: rotate(-40deg);
+            }
         }
     }
 }

@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './MobileNavigation.module.scss';
-import { ThemeContext } from '../../context/ThemeContext';
 import MobileNavigationDropdown from './NavigationDropdown';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
@@ -18,14 +17,13 @@ interface Props {
 function MobileNavigation({ dropdownData, companyData }: Props) {
     const [isOpen, setIsOpen] = useState<Boolean>(false);
     const [selectedCategory, setSelectedCategory] = useState<String | null>(null);
-    const { theme } = useContext(ThemeContext);
 
     const handleSelected = (category: string) => {
         setSelectedCategory(prevCategory => prevCategory === category ? null : category);
     }
     return (
         <>
-            <div className={`${styles.mobileNav} ${isOpen ? styles.navOpen : ''} ${styles[theme]}`} >
+            <div className={`${styles.mobileNav} ${isOpen ? styles.navOpen : ''}`} >
                 <div 
                     className={`${styles.burgerMenu} ${isOpen ? styles.burgerMenuOpen : ''}`}
                     role='button'
@@ -53,7 +51,7 @@ function MobileNavigation({ dropdownData, companyData }: Props) {
                         companyData.map((value, index) => (
                             <a
                                 key={index}
-                                className={styles.companyLink}
+                                className={`${styles.companyLink} ${index === 0 ? styles.firstLink : ''}`}
                             >
                                 {value}
                             </a>

@@ -2,6 +2,7 @@
 
 .socialMediaLinks {
     display: flex;
+    background-color: var(--bg-color-highlighed);
     &:not(.staticPositon) {
         position: absolute;
         top: 20%;
@@ -25,7 +26,11 @@
         display: flex;
         cursor: pointer;
 
-        svg {
+        &:not(:first-child) {
+            border-top-color: var(--text-tertiary);
+        }
+
+        .icon {
             position: relative;
             z-index: 5;
             color: $gray-100;
@@ -33,11 +38,11 @@
         }
 
         &.facebook::after {
-            background-color: blue;
+            background-color: #1877F2;
         }
 
         &.youtube::after {
-            background-color: $primary-color;
+            background-color: $primary-color-light;
         }
 
         &:after {
@@ -55,28 +60,6 @@
         &:not(:first-child) {
             border-top-width: 1px;
             border-top-style: solid;
-        }
-    }
-}
-
-.light {
-    &.socialMediaLinks {
-        background-color: $gray-200;
-        .socialLinkBox {
-            &:not(:first-child) {
-                border-top-color: $gray-400;
-            }
-        }
-    }
-}
-
-.dark {
-    &.socialMediaLinks {
-        background-color: $black;
-        .socialLinkBox {
-            &:not(:first-child) {
-                border-top-color: $gray-200;
-            }
         }
     }
 }

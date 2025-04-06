@@ -1,4 +1,4 @@
-import React, {
+import {
     ComponentPropsWithRef,
     useCallback,
     useEffect,
@@ -51,7 +51,7 @@ export const useDotButton = (
 
 type PropType = ComponentPropsWithRef<'button'>
 
-export const DotButton: React.FC<PropType> = (props) => {
+export function DotButton(props: PropType) {
     const { children, ...restProps } = props
 
     return (

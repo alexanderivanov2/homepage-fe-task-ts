@@ -8,7 +8,15 @@ function ThemeSwitcher() {
     const { theme, changeTheme } = useContext(ThemeContext);
     const logo = theme === 'light' ? LightThemeLogo : DarkThemeLogo;
     return (
-        <img src={logo} alt="Switch Theme Logo" onClick={changeTheme} style={{width: '30px', height: '30px'}}/>
+        <img 
+          src={logo}
+          alt="Switch Theme Logo"
+          onClick={changeTheme} 
+          style={{
+            width: '30px',
+            height: '30px',
+            cursor: 'pointer',
+          }}/>
   )
 }
 

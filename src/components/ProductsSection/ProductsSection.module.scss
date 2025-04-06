@@ -8,6 +8,7 @@
         font-size: $font-size-3xl;
         font-weight: $font-weight-regular;
         margin-bottom: 2rem;
+        color: var(--text-secondary);
     }
 
     .productsList {
@@ -68,25 +69,5 @@
                 height: 65vh;
             }
         }
-    }
-}
-
-.light {
-    .productNameBox {
-        background: rgba(0, 0, 0, 0.7);
-    }
-
-    .productName {
-        color: $gray-100;
-    }
-}
-
-.dark {
-    .productsTitle {
-        color: $gray-100;
-    }
-
-    .productName {
-        color: $gray-100;
     }
 }

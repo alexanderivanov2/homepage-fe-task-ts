@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
 import styles from './DesktopNavigation.module.scss'
-import { ThemeContext } from '../../context/ThemeContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 import UkFlagLogo from '../../assets/logos/uk-flag-logo.svg.svg';
@@ -14,13 +13,12 @@ interface Props {
 }
 
 function DesktopNavigation({ dropdownData, companyData }: Props) {
-    const { theme } = useContext(ThemeContext);
     const [selectedCategory, setSelectedCategory] = useState<String | null>(null);
     const handleSelected = (category: string) => {
         setSelectedCategory(prevCategory => prevCategory === category ? null : category);
     }
     return (
-        <div className={`${styles.desktopNav} ${styles[theme]}`}>
+        <div className={`${styles.desktopNav}`}>
             <div className={styles.leftSideNav}>
                 {dropdownData.map(({ title, items }) => {
                     if (title === 'COMPANY') return null;
@@ -50,7 +48,7 @@ function DesktopNavigation({ dropdownData, companyData }: Props) {
                     <div className={styles.languageIcon}>
                         <img src={UkFlagLogo} alt="" />
                     </div>
-                    <span>EN</span>
+                    <span className={styles.language}>EN</span>
                     <div className={styles.languageArrow}>
                         <ChevronDown size={16} />
                     </div>

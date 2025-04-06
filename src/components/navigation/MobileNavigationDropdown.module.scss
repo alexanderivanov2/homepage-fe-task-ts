@@ -2,98 +2,48 @@
 
 .dropdown {
     padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color-inverse);
+    .dropdownTitle, .dropdownLinks {
+        color: var(--text-darken);
+    }
 
     &.dropdownSelected {
         .dropdownTitle {
-            color: inherit;
-            font-weight: bold;
+            color: var(--primary-color);
+            font-weight: $font-weight-bold;
         }
     }
 
-    &:not(:first-child) {
-        border-top: 1px solid transparent;
-    }
-}
+    .dropdownTitle {
+        cursor: pointer;
+        font-size: $font-size;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 75vw;
 
-.dropdownTitle {
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 75vw;
-}
-
-.dropdownLinks {
-    padding: 1rem 0 0 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.dropdownLink {
-    cursor: pointer;
-    color: inherit;
-    transition: color 0.3s ease;
-
-    &.linkSelected {
-        font-weight: bold;
-    }
-}
-
-@media screen and (min-width: 860px) {
-    
-}
-
-.light {
-    &.dropdown {
-        &:not(:first-child) {
-            border-top: 1px solid $gray-400;
-        }
-
-        &.dropdownSelected {
-            .dropdownTitle {
-                color: $primary-color;
-            }
-        }
-
-        .dropdownLink:hover {
-            color: $primary-color;
+        &:hover {
+            color: var(--primary-color);
         }
     }
 
-    .linkSelected {
-        color: $primary-color;
-    }
-}
+    .dropdownLinks {
+        padding: 1rem 0 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-.dark {
-    &.dropdown {
-        &:not(:first-child) {
-            border-top: 1px solid $gray-100;
-        }
-
-        .dropdownTitle,
         .dropdownLink {
-            color: $gray-400;
-
-
-
-            &.linkSelected, &:hover {
-                color: $secondary-color;
+            cursor: pointer;
+            color: inherit;
+            transition: color 0.3s ease;
+            &:hover, &.linkSelected {
+                color: var(--primary-color);
             }
-        }
 
-        &.dropdownSelected {
-            .dropdownTitle {
-                color: $secondary-color;
+            &.linkSelected{
+                font-weight: $font-weight-bold;
             }
-        }
-    }
-
-    .languageDropdown {
-        span {
-            color: $gray-200;
         }
     }
 }

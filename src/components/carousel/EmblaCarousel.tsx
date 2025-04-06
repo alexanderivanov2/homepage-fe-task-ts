@@ -1,8 +1,6 @@
-import { useContext } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ThemeContext } from '../../context/ThemeContext'
 import { Slide } from '../HeroSection/types'
 
 type PropType = {
@@ -12,11 +10,9 @@ type PropType = {
 
 function EmblaCarousel({ slides, options }: PropType) {
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
-    const { selectedIndex, scrollSnaps, onDotButtonClick } =
-        useDotButton(emblaApi)
-    const { theme } = useContext(ThemeContext);
+    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
     return (
-        <section className={`embla ${theme}`}>
+        <section className={`embla`}>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {slides.map((slide, index) => (
@@ -27,10 +23,9 @@ function EmblaCarousel({ slides, options }: PropType) {
                                 )}
                                 {slide.text && (
                                     <p className="embla__slide__text">
-                                        { slide.textFirstWord ? <span className="thin">{ slide.textFirstWord }</span> : ''}{slide.text}
+                                        {slide.textFirstWord ? <span className="thin">{slide.textFirstWord}</span> : ''}{slide.text}
                                     </p>
                                 )}
-
                             </div>
                         </div>
                     ))}

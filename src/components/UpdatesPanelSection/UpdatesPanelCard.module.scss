@@ -19,6 +19,11 @@
         display: flex;
         align-items: center;
         gap: .75rem;
+        color: var(--text-secondary);
+
+        .icon {
+            color: var(--primary-color);
+        }
 
         .cardTopic {
             font-weight: $font-weight-small;
@@ -27,6 +32,8 @@
     }
 
     .cardBody {
+        border-color: $gray-400;
+        
         .cardImgBox {
             width: 100%;
             margin: 1rem 0 0.75rem;
@@ -43,19 +50,23 @@
             .cardTitle {
                 font-weight: $font-weight-small;
                 font-size: $font-size-lg;
+                color: var(--text-secondary);
             }
 
             .cardDate {
                 margin: 0.25rem 0;
+                color: $gray-500;
             }
 
             .cardLocation {
                 margin: -0.25rem 0 .5rem;
                 height: 1.25rem;
+                color: $gray-500;
             }
         }
 
         .cardDescription {
+            color: var(--text-tertiary);
             margin: auto 0 1.5rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -66,6 +77,8 @@
         }
 
         .cardBtn {
+            background-color: var(--primary-color);
+            color: var(--text-primary);
             width: 100%;
             padding: 1rem;
             text-align: center;
@@ -82,7 +95,7 @@
         padding: 2rem 1rem;
         .cardBody {
             .cardBodyHead {
-                height: 105px;
+                height: 90px;
             }
         }
     }
@@ -119,6 +132,7 @@
 
         .cardBody {
             .cardBodyHead {
+                height: 105px;
                 .cardTitle {
                     font-size: 1.4rem;
                 }
@@ -143,57 +157,5 @@
                 }
             }
         }
-    }
-}
-
-.light {
-    .cardHeader {
-        svg {
-            color: $primary-color;
-        }
-    }
-
-    .cardBody {
-        .cardTitle {
-            color: $black;
-        }
-        .cardDate, .cardLocation {
-            color: $gray-500;
-        }
-        .cardDescription {
-            color: $gray-600;
-        }
-    }
-
-    .cardBtn {
-        background-color: $primary-color;
-        color: $gray-100;
-    }
-}
-
-.dark {
-    .cardHeader {
-        .cardTopic {
-            color: $gray-100;
-        }
-
-        svg {
-            color: $secondary-color;
-        }
-    }
-
-    .cardBody {
-        border-color: $gray-100;
-
-        .cardTitle {
-            color: $gray-100;
-        }
-
-        color: $gray-400;
-    }
-
-    .cardBtn {
-        background-color: $secondary-color;
-        color: $gray-100;
     }
 }

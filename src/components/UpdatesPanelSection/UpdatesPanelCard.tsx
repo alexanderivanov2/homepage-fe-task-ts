@@ -1,21 +1,19 @@
-import { useContext } from 'react';
 import { Megaphone, Calendar, StickyNote } from 'lucide-react';
 
-import { ThemeContext } from '../../context/ThemeContext';
 import { SectionItem } from './types';
 
 import styles from './UpdatesPanelCard.module.scss';
 
 interface Props {
-    updateData: SectionItem
+    updateData: SectionItem;
 }
+
 function UpdatesPanelCard({ updateData }: Props) {
-    const { theme } = useContext(ThemeContext);
     const Icon = updateData?.icon === 'megaphone' ? Megaphone : (updateData.icon === 'calendar' ? Calendar : StickyNote)
     return (
-        <div className={`${styles.updatesPanelCard} ${styles[theme]}`}>
+        <div className={`${styles.updatesPanelCard}`}>
             <div className={styles.cardHeader}>
-                <Icon size={48} />
+                <Icon size={42} className={styles.icon}/>
                 <h3 className={styles.cardTopic}>{updateData.topic}</h3>
             </div>
             <div className={styles.cardBody}>

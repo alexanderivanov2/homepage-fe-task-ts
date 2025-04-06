@@ -1,7 +1,4 @@
-import { useContext } from 'react';
-
 import { useJsonData } from '../../hooks/useJson';
-import { ThemeContext } from '../../context/ThemeContext';
 import { useDeviceType } from '../../context/DeviceType';
 
 import FooterRow from './FooterRow';
@@ -11,9 +8,7 @@ import { FooterItem } from './types';
 import styles from './Footer.module.scss';
 import SocialMediaLinks from '../SocialMediaLinks/SocialMediaLinks';
 
-
 function Footer() {
-    const { theme } = useContext(ThemeContext);
     const { isMobile } = useDeviceType();
     const { data } = useJsonData<FooterItem[] | null>('footer');
     const footerData: FooterItem[] = [];
@@ -28,9 +23,9 @@ function Footer() {
     });
 
     return ( !!data &&
-        <footer className={`section highlighed ${styles.footer} ${theme} ${styles[theme]}`}>
+        <footer className={`section highlighed ${styles.footer}`}>
             <div className={`container ${styles.footerRows}`}>
-                { !isMobile && footerData.length && footerData.map((footerItem, index) => (
+                { !isMobile && footerData.length && footerData.map((footerItem) => (
                     <FooterRow key={footerItem.title} title={footerItem.title} items={footerItem.items} />
                 ))}
                 { "title" in companyData && typeof companyData.title == 'string' && "items" in companyData && Array.isArray(companyData?.items) && <FooterRow title={companyData.title} items={companyData.items}/> }

@@ -7,6 +7,7 @@
         font-weight: $font-weight-regular;
         margin-bottom: 2rem;
         text-align: center;
+        color: var(--text-secondary);
     }
 
     .serverBasedProduct {
@@ -56,17 +57,5 @@
                 margin: 0;
               }
         }
-    }
-}
-
-.light {
-    .productTitle {
-        color: $black;
-    }
-}
-
-.dark {
-    .productTitle {
-        color: $gray-100;
     }
 }
